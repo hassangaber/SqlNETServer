@@ -123,14 +123,25 @@ namespace SqlServerSample
             // Entering direct interface mode in program
             else if(Decision=="I") {
                 Console.WriteLine("***SQL Queries Interface Mode***");
+                Console.WriteLine("Directly Query or 'E' to exit");
                 try {
                     String Query;
-                    int numQuery;
+                    //int numQuery;
                     using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
                     {
                         connection.Open();
 
                         while(true){
+
+                            Query=Console.ReadLine();
+                            if(Query=="E") break;
+
+                            using (SqlCommand command = new SqlCommand(Query, connection))
+                            {
+                                command.ExecuteNonQuery();
+                                Console.WriteLine("Query Sent");
+                            }
+                            
 
                         }
                     }
