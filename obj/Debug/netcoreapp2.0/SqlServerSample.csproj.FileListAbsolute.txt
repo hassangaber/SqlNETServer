@@ -1,0 +1,10 @@
+/Users/hassan/SqlServerSample/bin/Debug/netcoreapp2.0/SqlServerSample.deps.json
+/Users/hassan/SqlServerSample/bin/Debug/netcoreapp2.0/SqlServerSample.runtimeconfig.json
+/Users/hassan/SqlServerSample/bin/Debug/netcoreapp2.0/SqlServerSample.runtimeconfig.dev.json
+/Users/hassan/SqlServerSample/bin/Debug/netcoreapp2.0/SqlServerSample.dll
+/Users/hassan/SqlServerSample/bin/Debug/netcoreapp2.0/SqlServerSample.pdb
+/Users/hassan/SqlServerSample/obj/Debug/netcoreapp2.0/SqlServerSample.csproj.CoreCompileInputs.cache
+/Users/hassan/SqlServerSample/obj/Debug/netcoreapp2.0/SqlServerSample.AssemblyInfoInputs.cache
+/Users/hassan/SqlServerSample/obj/Debug/netcoreapp2.0/SqlServerSample.AssemblyInfo.cs
+/Users/hassan/SqlServerSample/obj/Debug/netcoreapp2.0/SqlServerSample.dll
+/Users/hassan/SqlServerSample/obj/Debug/netcoreapp2.0/SqlServerSample.pdb
