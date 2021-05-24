@@ -2,8 +2,6 @@
 using Microsoft.Data.SqlClient;
 using System.Text;
 
-//
-
 namespace SqlServerSample
 {
     class Program
@@ -12,7 +10,7 @@ namespace SqlServerSample
         {
             // Entry point
             Console.WriteLine(">> .NET & SQL Direct Interface <<");
-            Console.WriteLine("Type 'D' for DEMO or 'I' for the SQL Interface.");
+            Console.WriteLine("Type 'D' for DEMO, 'I' for the SQL Interface, or any other key to exit.");
 
             String Decision=Console.ReadLine();
 
@@ -27,7 +25,6 @@ namespace SqlServerSample
             if(Decision=="D"){
                 try {
                     Console.WriteLine("***SQL Queries DEMO: CREATE, READ, WRITE, DELETE***");
-
                     using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
                     {
                         connection.Open();
@@ -122,24 +119,27 @@ namespace SqlServerSample
             Console.WriteLine("Demo done. Press any key to finish...");
             Console.ReadKey(true);
             } 
+
             // Entering direct interface mode in program
             else if(Decision=="I") {
+                Console.WriteLine("***SQL Queries Interface Mode***");
+                try {
+                    String Query;
+                    int numQuery;
+                    using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+                    {
+                        connection.Open();
 
+                        while(true){
 
-
-
-
-
-
-
-
-
-
-
-
-
+                        }
+                    }
+                } catch (SqlException e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
             } else {
-                Console.WriteLine("No Correct Input selected. Program Terminated.");
+                Console.WriteLine("Program Terminated.");
             }
         } 
     }
