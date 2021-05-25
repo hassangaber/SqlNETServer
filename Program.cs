@@ -2,6 +2,8 @@
 using Microsoft.Data.SqlClient;
 using System.Text;
 
+// Main class
+
 namespace SqlServerSample
 {
     class Program
