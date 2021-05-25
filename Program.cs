@@ -21,6 +21,9 @@ namespace SqlServerSample
             builder.Password = "Incorrect475";   
             builder.InitialCatalog = "master";
 
+            // New QueryCall object to call commands
+            QueryCall QC = new QueryCall();
+
             // Entering demo mode in program
             if(Decision=="D"){
                 try {
@@ -30,35 +33,22 @@ namespace SqlServerSample
                         connection.Open();
                         Console.WriteLine("Done.");
 
-                        // Create a sample database
-                        Console.Write("Creating database 'SampleDB' ... ");
-                        String sql = "DROP DATABASE IF EXISTS SampleDB; CREATE DATABASE SampleDB";
-                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        // CREATE Command
+                        using (SqlCommand command = new SqlCommand(QC.CREATE(), connection))
                         {
                             command.ExecuteNonQuery();
                             Console.WriteLine("Done.");
                         }
 
-                        // Create a Table and insert some sample data
-                        Console.Write("Creating sample table with data, press any key to continue...");
-                        Console.ReadKey(true);
-                        StringBuilder sb = new StringBuilder();
-                        sb.Append("USE SampleDB");
-                    
-                        sql = sb.ToString();
-                        using (SqlCommand command = new SqlCommand(sql, connection))
+                       // USE Command
+                        using (SqlCommand command = new SqlCommand(QC.USE(), connection))
                         {
                             command.ExecuteNonQuery();
                             Console.WriteLine("Done.");
                         }
 
-                        // INSERT demo
-                        Console.Write("Inserting a new row into table, press any key to continue...");
-                        Console.ReadKey(true);
-                        sb.Clear();
-                    
-                        sql = sb.ToString();
-                        using (SqlCommand command = new SqlCommand(sql, connection))
+                       // INSERT Command
+                        using (SqlCommand command = new SqlCommand(QC.INSERT(), connection))
                         {
                             command.Parameters.AddWithValue("@name", "Hassan");
                             command.Parameters.AddWithValue("@location", "United States");
@@ -67,12 +57,13 @@ namespace SqlServerSample
                         }
 
                         // UPDATE demo
+                        StringBuilder sb = new StringBuilder();
                         String userToUpdate = "Hassan";
                         Console.Write("Updating 'Location' for user '" + userToUpdate + "', press any key to continue...");
                         Console.ReadKey(true);
                         sb.Clear();
                         sb.Append("UPDATE SampleDB SET Location = N'United States' WHERE Name = @name");
-                        sql = sb.ToString();
+                        String sql = sb.ToString();
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {
                             command.Parameters.AddWithValue("@name", userToUpdate);
