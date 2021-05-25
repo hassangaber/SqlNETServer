@@ -18,7 +18,7 @@ namespace SqlServerSample
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "localhost";   
             builder.UserID = "sa";             
-            builder.Password = "Incorrect475";   
+            builder.Password = "Password";   
             builder.InitialCatalog = "master";
 
             // New QueryCall object to call commands

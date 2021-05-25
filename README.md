@@ -12,7 +12,7 @@ Data stored in relational databases in SQL can be retrieved and used in your C# 
 ```sh
 brew install docker
 sudo docker pull microsoft/mssql-server-linux:2017-latest
-docker run -e "HOMEBREW_NO_ENV_FILTERING=1" -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Incorrect475" -p 1433:1433 -d microsoft/mssql-server-linux
+docker run -e "HOMEBREW_NO_ENV_FILTERING=1" -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Password" -p 1433:1433 -d microsoft/mssql-server-linux
 ```
 * ASP.NET for macOS:
 https://docs.microsoft.com/en-us/dotnet/core/install/macos
