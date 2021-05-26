@@ -8,7 +8,6 @@ namespace SqlServerSample {
 
         //Connect to server
         public SqlConnectionStringBuilder CONNECT(){
-
             // Build connection string & login
             Console.WriteLine("Logging into SQL Server...");
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
@@ -17,7 +16,6 @@ namespace SqlServerSample {
             builder.Password = "Incorrect475"; //Password will change based on the server configuration  
             builder.InitialCatalog = "master";
             Console.WriteLine("Login Successful!");
-
             return builder;
         }
 
@@ -46,6 +44,16 @@ namespace SqlServerSample {
             StringBuilder sb = new StringBuilder();
             sb.Clear();
             return sb.ToString();
+        }
+
+        public String UPDATE(){
+
+            return "";
+        }
+
+        public String DELETE(){
+
+            return "";
         }
     }
 }

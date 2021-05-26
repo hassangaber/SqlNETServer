@@ -121,12 +121,9 @@ namespace SqlServerSample
                                 command.ExecuteNonQuery();
                                 Console.WriteLine("Query Sent");
                             }
-                            
-
                         }
                     }
-                } catch (SqlException e)
-                {
+                } catch (SqlException e) {
                     Console.WriteLine(e.ToString());
                 }
             } else {
