@@ -6,6 +6,22 @@ namespace SqlServerSample{
 
     public class QueryCall {
 
+        //Connect to server
+
+        public SqlConnectionStringBuilder CONNECT(){
+
+            // Build connection string & login
+            Console.WriteLine("Logging into SQL Server...");
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "localhost";   
+            builder.UserID = "sa";             
+            builder.Password = "Incorrect475"; //Password will change based on the server configuration  
+            builder.InitialCatalog = "master";
+            Console.WriteLine("Login Successful!");
+
+            return builder;
+        }
+
         //Create a database query
         public String CREATE(){
             Console.Write("Creating database 'SampleDB' ... ");
@@ -32,7 +48,5 @@ namespace SqlServerSample{
             sb.Clear();
             return sb.ToString();
         }
-
-
     }
 }
