@@ -2,12 +2,11 @@ using System;
 using Microsoft.Data.SqlClient;
 using System.Text;
 
-namespace SqlServerSample{
+namespace SqlServerSample {
 
     public class QueryCall {
 
         //Connect to server
-
         public SqlConnectionStringBuilder CONNECT(){
 
             // Build connection string & login
